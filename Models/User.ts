@@ -7,7 +7,12 @@ export default class User extends Model {
   static fields = {
     id: { primaryKey: true, autoIncrement: true },
     name: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+      length: 50,
+    },
     password: DataTypes.STRING,
   };
 }
