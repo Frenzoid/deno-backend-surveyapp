@@ -1,8 +1,8 @@
-import { Database, DataTypes, Model } from "./depts.ts";
+import { Database } from "./depts.ts";
 import User from "./Models/User.ts";
 
 // Database credentials are specified on a .env file on the same level as server.ts
-const db = new Database("postgres", {
+const db: Database = new Database("postgres", {
   host: `${Deno.env.get("dbhost")}`,
   username: `${Deno.env.get("dbusername")}`,
   password: `${Deno.env.get("dbpassword")}`,

@@ -12,4 +12,9 @@ export {
   Database,
   Model,
   Relationships,
-} from "https://deno.land/x/denodb/mod.ts";
+} from "https://deno.land/x/denodb@v1.0.4/mod.ts";
+
+export {
+  compareSync,
+  hashSync,
+} from "https://deno.land/x/bcrypt@v0.2.2/mod.ts";
