@@ -1,4 +1,5 @@
 // depts.ts: master dependencies file, the depths of hell.
+import "https://deno.land/x/dotenv@v0.5.0/load.ts";
 
 export {
   Application,

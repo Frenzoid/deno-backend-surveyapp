@@ -9,6 +9,7 @@ import { key, header, createPayload } from "../utils/jwtutil.ts";
 import User from "../Models/User.ts";
 
 class AuthController {
+  // POST Login route method.
   async login(ctx: RouterContext) {
     const { value: { email, password } } = await ctx.request.body();
     if (!email || !password) {

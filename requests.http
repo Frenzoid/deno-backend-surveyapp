@@ -1,5 +1,6 @@
 
 // requests.https: the requests file used to send requests and test the backend, (if youre using vscode, install the Request Client extension to use it automatically).
+### AuthController ######################################################
 ### Register
 POST http://localhost:8000/api/register
 Content-Type: application/json
@@ -17,4 +18,30 @@ Content-Type: application/json
 {
     "email": "test@example.com",
     "password": "example"
+}
+
+### SurveyController ######################################################
+### Create
+POST http://localhost:8000/api/survey
+Content-Type: application/json
+
+{
+    "name": "Survey 1",
+    "description": "Lore ipsum"
+}
+
+### Get all surveys
+GET http://localhost:8000/api/survey
+Content-Type: application/json
+
+{
+    
+}
+
+### Get single survey
+GET http://localhost:8000/api/survey/id
+Content-Type: application/json
+
+{
+    
 }

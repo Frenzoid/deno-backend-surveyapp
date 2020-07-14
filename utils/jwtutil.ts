@@ -1,6 +1,6 @@
 import { Jose, Payload, setExpiration } from "../depts.ts";
 
-export const key: string = Deno.env.get("jwtsecret")!;
+export const key: string = Deno.env.get("JWT_SECRET")!;
 export const header: Jose = {
   alg: "HS256",
   typ: "JWT",

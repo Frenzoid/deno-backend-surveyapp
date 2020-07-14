@@ -1,6 +1,5 @@
 // server.ts: server gateway and app initializers.
 
-import "https://deno.land/x/dotenv@v0.5.0/load.ts";
 import {
   Application,
 } from "./depts.ts";
@@ -10,6 +9,7 @@ import router from "./router.ts";
 await db.sync({ drop: true });
 if (db.getConnector()._connected) {
   console.log("Database connected successfully!");
+  // console.log(db.getConnector());
 }
 
 const app = new Application();
