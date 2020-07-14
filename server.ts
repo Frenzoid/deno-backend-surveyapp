@@ -1,5 +1,4 @@
 // server.ts: server gateway and app initializers.
-
 import {
   Application,
 } from "./depts.ts";

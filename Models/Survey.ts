@@ -1,8 +1,9 @@
 // Survey.ts: The survey model.
-import { DataTypes, Model } from "../depts.ts";
+import { DataTypes, Model, Relationships } from "../depts.ts";
+import User from "./User.ts";
 
 export default class Survey extends Model {
-  static table = "survey";
+  static table = "surveys";
   static timestamps = true;
 
   static fields = {
@@ -19,7 +20,13 @@ export default class Survey extends Model {
       allowNull: false,
       length: 200,
     },
+    userId: Relationships.belongsTo(User),
   };
+
+  // Fetch an user binded to this survey
+  static user() {
+    return this.hasOne(User);
+  }
 
   // Model record
   id!: number;

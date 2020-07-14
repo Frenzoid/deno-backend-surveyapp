@@ -34,14 +34,16 @@ Content-Type: application/json
 GET http://localhost:8000/api/survey
 Content-Type: application/json
 
-{
-    
-}
-
 ### Get single survey
 GET http://localhost:8000/api/survey/id
 Content-Type: application/json
 
+
+### Update survey
+PUT http://localhost:8000/api/survey/id
+Content-Type: application/json
+
 {
-    
+    "name": "Survey 999",
+    "description": "Lore ipsum"
 }
