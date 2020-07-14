@@ -8,6 +8,9 @@ import db from "./dbconnector.ts";
 import router from "./router.ts";
 
 await db.sync({ drop: true });
+if (db.getConnector()._connected) {
+  console.log("Database connected successfully!");
+}
 
 const app = new Application();
 

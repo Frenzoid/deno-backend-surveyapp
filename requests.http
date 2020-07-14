@@ -1,6 +1,6 @@
 
 // requests.https: the requests file used to send requests and test the backend, (if youre using vscode, install the Request Client extension to use it automatically).
-# Register
+### Register
 POST http://localhost:8000/api/register
 Content-Type: application/json
 
@@ -10,7 +10,7 @@ Content-Type: application/json
     "password": "example"
 }
 
-# Login
+### Login
 POST http://localhost:8000/api/login
 Content-Type: application/json
 

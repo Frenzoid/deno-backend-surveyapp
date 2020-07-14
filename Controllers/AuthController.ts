@@ -19,7 +19,7 @@ class AuthController {
       return;
     }
 
-    let user = (await User.where("email", email).limit(1).get())[0]; // getOne
+    let user = (await User.where(email).first());
 
     if (!user) {
       ctx.response.status = 422;
@@ -27,14 +27,19 @@ class AuthController {
       return;
     }
 
-    if (compareSync(password, user.password)) {
+    if (!compareSync(password, user.password)) {
       ctx.response.status = 422;
       ctx.response.body = { message: "Incorrect password." };
       return;
     }
 
     const payload = createPayload(user.email, 60 * 60 * 1000);
-    makeJwt({ key, header, payload });
+    const jwt = makeJwt({ key, header, payload });
+
+    delete user.password;
+
+    ctx.response.status = 201;
+    ctx.response.body = { user, jwt };
   }
 
   // POST Register route method.
@@ -48,7 +53,7 @@ class AuthController {
       return;
     }
 
-    let user = (await User.where("email", email).limit(1).get())[0]; // getOne
+    let user = (await User.where(email).first());
 
     if (user) {
       // If user exists, return an error with error code.

@@ -16,4 +16,10 @@ export default class User extends Model {
     },
     password: DataTypes.STRING,
   };
+
+  // Model record
+  id!: number;
+  name!: string;
+  email!: string;
+  password!: string;
 }
