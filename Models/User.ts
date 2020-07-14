@@ -1,3 +1,4 @@
+// Users.ts: The user model.
 import { DataTypes, Model } from "../depts.ts";
 
 export default class User extends Model {

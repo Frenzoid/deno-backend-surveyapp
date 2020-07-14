@@ -1,3 +1,4 @@
+// dbconnector.ts: the database connector
 import { Database } from "./depts.ts";
 import User from "./Models/User.ts";
 

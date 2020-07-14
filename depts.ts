@@ -1,4 +1,4 @@
-// depts.ts: master dependencies file.
+// depts.ts: master dependencies file, the depths of hell.
 
 export {
   Application,
@@ -18,3 +18,12 @@ export {
   compareSync,
   hashSync,
 } from "https://deno.land/x/bcrypt@v0.2.2/mod.ts";
+
+export {
+  makeJwt,
+  setExpiration,
+  Jose,
+  Payload,
+} from "https://deno.land/x/djwt@v0.9.0/create.ts";
+
+export { validateJwt } from "https://deno.land/x/djwt@v0.9.0/validate.ts";
