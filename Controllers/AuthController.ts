@@ -6,7 +6,7 @@ import {
   makeJwt,
 } from "../depts.ts";
 import { key, header, createPayload } from "../utils/jwtutil.ts";
-import User from "../Models/User.ts";
+import { User, UserRoles } from "../Models/User.ts";
 
 class AuthController {
   // POST Login route method.
@@ -66,7 +66,9 @@ class AuthController {
 
     // otherwise, encrypt password, create user, return created user.
     const hashedPassword = hashSync(password);
-    user = await User.create({ name, email, password: hashedPassword });
+    user = await User.create(
+      { name, email, password: hashedPassword, role: UserRoles.USER },
+    );
 
     // we delete the password property before sending it back to the claimant.
     delete user.password;
