@@ -20,13 +20,10 @@ export default class Survey extends Model {
       allowNull: false,
       length: 200,
     },
-    // userId: Relationships.belongsTo(User),
+    userId: Relationships.belongsTo(User),
   };
 
-  // Fetch an user binded to this survey
-  static user() {
-    return this.hasOne(User);
-  }
+  static user() {}
 
   // Model record
   id!: number;

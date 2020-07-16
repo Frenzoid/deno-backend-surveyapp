@@ -2,13 +2,18 @@
 import {
   Application,
 } from "./depts.ts";
-import db from "./dbconnector.ts";
+import db from "./database/dbconnector.ts";
 import router from "./router.ts";
+import { SubmitRelations } from "./database/relations.ts";
 
-await db.sync({ drop: true });
-if (db.getConnector()._connected) {
-  console.log("Database connected successfully!");
-  // console.log(db.getConnector());
+try {
+  await db.sync({ drop: true });
+  if (db.getConnector()._connected) {
+    console.log("Database synced successfully, creating relations!");
+    SubmitRelations();
+  }
+} catch (e) {
+  console.error(e);
 }
 
 const app = new Application();

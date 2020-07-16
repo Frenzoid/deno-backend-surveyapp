@@ -1,9 +1,9 @@
 // AuthController.ts: The auth controller for the rotuer.
 import {
   RouterContext,
-  hashSync,
   compareSync,
   makeJwt,
+  hashSync,
 } from "../depts.ts";
 import { key, header, createPayload } from "../utils/jwtutil.ts";
 import { User, UserRoles } from "../Models/User.ts";
@@ -20,7 +20,7 @@ class AuthController {
       return;
     }
 
-    let user = (await User.where(email).first());
+    let user = await User.where(email).first();
 
     if (!user) {
       ctx.response.status = 422;
@@ -54,7 +54,7 @@ class AuthController {
       return;
     }
 
-    let user = (await User.where(email).first());
+    let user = await User.where(email).first();
 
     if (user) {
       // If user exists, return an error with error code.

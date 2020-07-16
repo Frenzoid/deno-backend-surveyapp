@@ -1,5 +1,5 @@
 // Users.ts: The user model.
-import { DataTypes, Model } from "../depts.ts";
+import { DataTypes, Model, Relationships } from "../depts.ts";
 import Survey from "./Survey.ts";
 
 export enum UserRoles {
@@ -30,10 +30,7 @@ export class User extends Model {
     role: DataTypes.enum([UserRoles.ADMIN, UserRoles.USER]),
   };
 
-  // Fetch surveys binded to this user
-  static surveys() {
-    return this.hasMany(Survey);
-  }
+  static surveys() {}
 
   // Model record
   id!: number;
@@ -41,4 +38,5 @@ export class User extends Model {
   email!: string;
   password!: string;
   role!: UserRoles;
+  surveys!: Survey[];
 }

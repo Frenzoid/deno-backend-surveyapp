@@ -15,8 +15,8 @@ router
   .post("/api/login", authController.login)
   .post("/api/register", authController.register)
   // SurveyController
-  .get("/api/survey", surveyController.getAllForUser)
-  .get("/api/survey/:id", surveyController.getSigle)
+  .get("/api/survey", surveyController.getSpecific)
+  .get("/api/survey/:id", surveyController.getMySurveys)
   .post("/api/survey", surveyController.create)
   .put("/api/survey", surveyController.update)
   .delete("/api/survey/:id", surveyController.delete);
