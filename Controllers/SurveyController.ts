@@ -35,7 +35,10 @@ class SurveyController {
   }
 
   async create(ctx: RouterContext) {
-    const { value: { name, description } } = await ctx.request.body();
+    const { value: { name, description } } = await ctx.request.body(
+      { type: "json" },
+    ).value;
+
     if (!name || !description) {
       ctx.response.status = 422;
       ctx.response.body = {
@@ -59,7 +62,10 @@ class SurveyController {
       return;
     }
 
-    const { value: { name, description } } = await ctx.request.body();
+    const { value: { name, description } } = await ctx.request.body(
+      { type: "json" },
+    ).value;
+
     const survey: Survey = await Survey.where(id).first();
 
     survey.name = name;

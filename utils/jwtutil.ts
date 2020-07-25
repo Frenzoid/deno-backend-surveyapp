@@ -7,9 +7,9 @@ export const header: Jose = {
   typ: "JWT",
 };
 
-export const createPayload = (keydata: string, time: number): Payload => {
+export const createPayload = (storedData: string, time: number): Payload => {
   const payload: Payload = {
-    iss: keydata,
+    iss: storedData,
     exp: setExpiration(new Date().getTime() + time), // 1h
   };
 
@@ -30,10 +30,10 @@ export const getCurrentUser = async (headers: Headers) => {
   const data = await validateJwt(
     jwt,
     Deno.env.get("JWT_SECRET") || "",
-    { isThrowing: false },
+    { algorithm: header.alg },
   );
 
-  if (data) {
+  if (data.isValid) {
     try {
       const user = await User.where({ email: data.payload?.iss! }).first();
       return user;

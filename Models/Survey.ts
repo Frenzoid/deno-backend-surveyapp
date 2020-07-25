@@ -23,6 +23,7 @@ export default class Survey extends Model {
     userId: Relationships.belongsTo(User),
   };
 
+  // This function is rewritten on database/relations.ts
   static user() {}
 
   // Model record

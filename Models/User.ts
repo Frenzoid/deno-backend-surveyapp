@@ -30,6 +30,7 @@ export class User extends Model {
     role: DataTypes.enum([UserRoles.ADMIN, UserRoles.USER]),
   };
 
+  // This function is rewritten on database/relations.ts
   static surveys() {}
 
   // Model record

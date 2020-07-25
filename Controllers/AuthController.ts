@@ -11,7 +11,10 @@ import { User, UserRoles } from "../Models/User.ts";
 class AuthController {
   // POST Login route method.
   async login(ctx: RouterContext) {
-    const { value: { email, password } } = await ctx.request.body();
+    const { value: { email, password } } = await ctx.request.body(
+      { type: "json" },
+    ).value;
+
     if (!email || !password) {
       ctx.response.status = 422;
       ctx.response.body = {
@@ -41,11 +44,15 @@ class AuthController {
 
     ctx.response.status = 201;
     ctx.response.body = { user, jwt };
+    ctx.response.headers.set("Authorization", `${jwt}`);
   }
 
   // POST Register route method.
   async register(ctx: RouterContext) {
-    const { value: { name, email, password } } = await ctx.request.body();
+    const { value: { name, email, password } } = await ctx.request.body(
+      { type: "json" },
+    ).value;
+
     if (!email || !password) {
       ctx.response.status = 422;
       ctx.response.body = {

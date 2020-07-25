@@ -5,7 +5,7 @@ export {
   Application,
   Router,
   RouterContext,
-} from "https://deno.land/x/oak@v5.3.1/mod.ts";
+} from "https://deno.land/x/oak@v6.0.0/mod.ts";
 
 export {
   DATA_TYPES,
@@ -25,6 +25,6 @@ export {
   setExpiration,
   Jose,
   Payload,
-} from "https://deno.land/x/djwt@v0.9.0/create.ts";
+} from "https://deno.land/x/djwt@v1.0/create.ts";
 
-export { validateJwt } from "https://deno.land/x/djwt@v0.9.0/validate.ts";
+export { validateJwt } from "https://deno.land/x/djwt@v1.0/validate.ts";
