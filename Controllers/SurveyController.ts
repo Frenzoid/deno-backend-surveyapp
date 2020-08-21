@@ -1,7 +1,7 @@
-import { RouterContext } from "../depts.ts";
-import Survey from "../Models/Survey.ts";
-import { User } from "../Models/User.ts";
-import { getCurrentUser } from "../utils/jwtutil.ts";
+import { RouterContext } from "../depts";
+import { Survey } from "../Models/Survey";
+import { User } from "../Models/User";
+import { getCurrentUser } from "../utils/jwtutil";
 
 class SurveyController {
   async getMySurveys(ctx: RouterContext) {

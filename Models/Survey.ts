@@ -1,8 +1,8 @@
 // Survey.ts: The survey model.
-import { DataTypes, Model, Relationships } from "../depts.ts";
-import { User } from "./User.ts";
+import { DataTypes, Model, Relationships } from "../depts";
+import { User } from "./User";
 
-export default class Survey extends Model {
+export class Survey extends Model {
   static table = "surveys";
   static timestamps = true;
 

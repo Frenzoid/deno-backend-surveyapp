@@ -1,6 +1,6 @@
 // Users.ts: The user model.
-import { DataTypes, Model, Relationships } from "../depts.ts";
-import Survey from "./Survey.ts";
+import { DataTypes, Model, Relationships } from "../depts";
+import { Survey } from "./Survey";
 
 export enum UserRoles {
   ADMIN,
