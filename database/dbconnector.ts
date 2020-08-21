@@ -1,9 +1,9 @@
-// dbconnector.ts: the database connector
-import { Database } from "../depts.ts";
-import { User } from "../Models/User.ts";
-import Survey from "../Models/Survey.ts";
+// dbconnector: the database connector
+import { Database } from "../depts";
+import { User } from "../Models/User";
+import { Survey } from "../Models/Survey";
 
-// Database credentials are specified on a .env file on the same level as server.ts
+// Database credentials are specified on a .env file on the same level as server
 const db: Database = new Database("postgres", {
   host: `${Deno.env.get("DB_HOST")}`,
   username: `${Deno.env.get("DB_USERNAME")}`,

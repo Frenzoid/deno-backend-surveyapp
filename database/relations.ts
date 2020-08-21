@@ -1,7 +1,7 @@
-// relations.ts: file which contains all relations, executed on server.ts after database is synced.
+// relations: file which contains all relations, executed on server after database is synced.
 
-import { User } from "../Models/User.ts";
-import Survey from "../Models/Survey.ts";
+import { User } from "../Models/User";
+import { Survey } from "../Models/Survey";
 
 // Execute Relations:
 export function SubmitRelations() {

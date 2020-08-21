@@ -1,10 +1,10 @@
-// server.ts: server gateway and app initializers.
+// server: server gateway and app initializers.
 import {
   Application,
-} from "./depts.ts";
-import db from "./database/dbconnector.ts";
-import router from "./router.ts";
-import { SubmitRelations } from "./database/relations.ts";
+} from "./depts";
+import db from "./database/dbconnector";
+import router from "./router";
+import { SubmitRelations } from "./database/relations";
 
 try {
   await db.sync({ drop: true });

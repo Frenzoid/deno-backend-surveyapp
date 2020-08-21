@@ -1,8 +1,8 @@
-// router.ts: master router redirection file.
+// router: master router redirection file.
 
-import { Router, RouterContext } from "./depts.ts";
-import authController from "./Controllers/AuthController.ts";
-import surveyController from "./Controllers/SurveyController.ts";
+import { Router, RouterContext } from "./depts";
+import authController from "./Controllers/AuthController";
+import surveyController from "./Controllers/SurveyController";
 
 const router = new Router();
 
